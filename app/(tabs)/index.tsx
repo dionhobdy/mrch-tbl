@@ -1,7 +1,12 @@
 import { Image } from 'expo-image';
+<<<<<<< HEAD
 import { Platform, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import QRCode from 'react-native-qrcode-svg';
 import { useState } from 'react';
+=======
+import { Platform, StyleSheet, ScrollView } from 'react-native';
+import QRCode from 'react-native-qrcode-svg';
+>>>>>>> bf14d911b14080edd19ae2add6e60c6416c8c1d6
 
 import ParallaxScrollView from '@/components/parallax-scroll-view';
 import { ThemedText } from '@/components/themed-text';
@@ -9,7 +14,10 @@ import { ThemedView } from '@/components/themed-view';
 import { Link } from 'expo-router';
 
 export default function HomeScreen() {
+<<<<<<< HEAD
   const [activeTab, setActiveTab] = useState<'cart' | 'recent'>('cart');
+=======
+>>>>>>> bf14d911b14080edd19ae2add6e60c6416c8c1d6
   return (
     <ParallaxScrollView
         headerImage={<ThemedView style={{ height: 200, backgroundColor: 'transparent' }} />}
@@ -19,6 +27,7 @@ export default function HomeScreen() {
         </ThemedView>
       <ThemedView style={styles.stepContainer}>
         <ThemedView style={styles.sectionContainer}>
+<<<<<<< HEAD
           <ThemedView style={styles.toggleContainer}>
             <TouchableOpacity onPress={() => setActiveTab('cart')}>
               <ThemedText 
@@ -48,6 +57,32 @@ export default function HomeScreen() {
               <ThemedText style={styles.emptyStateText}>No recent purchases were made</ThemedText>
             </ThemedView>
           )}
+=======
+          <ThemedText type="subtitle">CART</ThemedText>
+          <ThemedView style={styles.qrContainer}>
+            <QRCode
+              value="https://google.com"
+              size={280}
+              backgroundColor="white"
+              color="black"
+            />
+          </ThemedView>
+        </ThemedView>
+        <ThemedView style={styles.sectionContainer}>
+          <ThemedText type="subtitle">RECENT</ThemedText>
+          <ScrollView 
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={styles.scrollContent}
+            style={styles.scrollView}
+          >
+            <ThemedView style={styles.whiteSquare} />
+            <ThemedView style={styles.whiteSquare} />
+            <ThemedView style={styles.whiteSquare} />
+            <ThemedView style={styles.whiteSquare} />
+            <ThemedView style={styles.whiteSquare} />
+          </ScrollView>
+>>>>>>> bf14d911b14080edd19ae2add6e60c6416c8c1d6
         </ThemedView>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
@@ -98,7 +133,10 @@ const styles = StyleSheet.create({
     elevation: 3,
     alignItems: 'center',
     justifyContent: 'center',
+<<<<<<< HEAD
     minHeight: 320,
+=======
+>>>>>>> bf14d911b14080edd19ae2add6e60c6416c8c1d6
   },
   squareRow: {
     flexDirection: 'row',
@@ -113,6 +151,7 @@ const styles = StyleSheet.create({
     gap: 10,
     paddingHorizontal: 5,
   },
+<<<<<<< HEAD
   emptyStateContainer: {
     padding: 20,
     alignItems: 'center',
@@ -140,4 +179,6 @@ const styles = StyleSheet.create({
     height: 20,
     backgroundColor: '#00000020',
   },
+=======
+>>>>>>> bf14d911b14080edd19ae2add6e60c6416c8c1d6
 });
