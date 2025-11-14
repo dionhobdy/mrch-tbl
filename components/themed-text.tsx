@@ -50,11 +50,12 @@ const styles = StyleSheet.create({
     lineHeight: 75,
   },
   subtitle: {
-<<<<<<< HEAD
     fontSize: 40,
-=======
-    fontSize: 50,
->>>>>>> bf14d911b14080edd19ae2add6e60c6416c8c1d6
     fontWeight: 'regular',
+  },
+  link: {
+    fontSize: 16,
+    lineHeight: 24,
+    color: '#0a7ea4',
   },
 });
