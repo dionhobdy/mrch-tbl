@@ -57,12 +57,18 @@ export default function ScanScreen() {
                 }}
             >
                 <View style={styles.overlay}>
-                    <View style={styles.scanArea}>
-                        <View style={[styles.corner, styles.topLeft]} />
-                        <View style={[styles.corner, styles.topRight]} />
-                        <View style={[styles.corner, styles.bottomLeft]} />
-                        <View style={[styles.corner, styles.bottomRight]} />
+                    <View style={styles.dimOverlay} />
+                    <View style={styles.middleRow}>
+                        <View style={styles.dimOverlaySide} />
+                        <View style={styles.scanArea}>
+                            <View style={[styles.corner, styles.topLeft]} />
+                            <View style={[styles.corner, styles.topRight]} />
+                            <View style={[styles.corner, styles.bottomLeft]} />
+                            <View style={[styles.corner, styles.bottomRight]} />
+                        </View>
+                        <View style={styles.dimOverlaySide} />
                     </View>
+                    <View style={styles.dimOverlay} />
 
                     <Text style={styles.instructionText}>
                          {scanned ? 'QR Code Scanned!' : 'Align QR Code within frame to scan'}
@@ -86,11 +92,26 @@ const styles = StyleSheet.create({
   },
   camera: {
     flex: 1,
-    width: '100%',
   },
   overlay: {
     flex: 1,
     backgroundColor: 'transparent',
+    justifyContent: 'space-between',
+  },
+  dimOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.6)',
+    width: '100%',
+  },
+  middleRow: {
+    flexDirection: 'row',
+    width: '100%',
+  },
+  dimOverlaySide: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.6)',
+  },
+  scanAreaContainer: {
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -136,5 +157,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     padding: 10,
     borderRadius: 8,
+    width: '100%',
+    textAlign: 'center',
   },
 });

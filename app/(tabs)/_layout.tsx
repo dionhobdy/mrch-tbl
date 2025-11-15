@@ -16,19 +16,29 @@ export default function TabLayout() {
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
         tabBarButton: HapticTab,
+        tabBarStyle: {
+          justifyContent: 'center',
+          paddingTop: 8,
+        },
+        tabBarIconStyle: {
+          alignItems: 'center',
+          justifyContent: 'center',
+          marginTop: 4,
+          marginBottom: 0,
+        },
       }}>
       <Tabs.Screen
         name="index"
         options={{
           title: '',
-          tabBarIcon: () => <Image source={require('@/assets/images/menu-bar/home.png')} style={{ width: 28, height: 28 }} />,
+          tabBarIcon: () => <Image source={require('@/assets/images/menu-bar/home.png')} style={{ width: 28, height: 28, alignSelf: 'center' }} />,
         }}
       />
       <Tabs.Screen
         name="scan"
         options={{
           title: '',
-          tabBarIcon: () => <Image source={require('@/assets/images/menu-bar/scan.png')} style={{ width: 28, height: 28 }} />,
+          tabBarIcon: () => <Image source={require('@/assets/images/menu-bar/scan.png')} style={{ width: 28, height: 28, alignSelf: 'center' }} />,
         }}
       />
       <Tabs.Screen
@@ -41,7 +51,7 @@ export default function TabLayout() {
         name="settings"
         options={{
           title: '',
-          tabBarIcon: () => <Image source={require('@/assets/images/menu-bar/account.png')} style={{ width: 28, height: 28 }} />,
+          tabBarIcon: () => <Image source={require('@/assets/images/menu-bar/account.png')} style={{ width: 28, height: 28, alignSelf: 'center' }} />,
         }}
       />
     </Tabs>

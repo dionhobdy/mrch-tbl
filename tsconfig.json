@@ -5,6 +5,7 @@
     "esModuleInterop": true,
     "jsx": "react-native",
     "skipLibCheck": true,
+    "types": [],
     "paths": {
       "@/*": [
         "./*"

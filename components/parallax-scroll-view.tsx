@@ -17,12 +17,14 @@ const HEADER_HEIGHT = 80;
 type Props = PropsWithChildren<{
   headerImage: ReactElement;
   headerBackgroundColor: { dark: string; light: string };
+  scrollEnabled?: boolean;
 }>;
 
 export default function ParallaxScrollView({
   children,
   headerImage,
   headerBackgroundColor,
+  scrollEnabled = true,
 }: Props) {
   const backgroundColor = useThemeColor({}, 'background');
   const colorScheme = useColorScheme() ?? 'light';
@@ -49,14 +51,15 @@ export default function ParallaxScrollView({
     <Animated.ScrollView
       ref={scrollRef}
       style={{ backgroundColor, flex: 1 }}
-      scrollEventThrottle={16}>
+      scrollEventThrottle={16}
+      scrollEnabled={scrollEnabled}>
       <Animated.View
         style={[
           styles.header,
           { backgroundColor: headerBackgroundColor[colorScheme] },
           headerAnimatedStyle,
         ]}>
-          <ThemedText type="title" style={{ marginTop: 20 }}>MRCH-TBL</ThemedText>
+          <ThemedText type="title" style={{ marginTop: 20, zIndex: 2, position: 'relative' }}>MRCH-TBL</ThemedText>
       </Animated.View>
       <ThemedView style={styles.content}>{children}</ThemedView>
     </Animated.ScrollView>

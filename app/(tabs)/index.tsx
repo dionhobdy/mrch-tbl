@@ -132,7 +132,6 @@ const styles = StyleSheet.create({
   },
   input: {
     backgroundColor: 'transparent',
-    borderRadius: 8,
     padding: 12,
     color: '#ffffff',
     fontSize: 30,
@@ -154,7 +153,7 @@ const styles = StyleSheet.create({
   },
   divider: {
     width: 1,
-    height: 20,
-    backgroundColor: '#00000020',
+    height: 35,
+    backgroundColor: '#e2e2e220',
   },
 });
